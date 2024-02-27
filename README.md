@@ -2,7 +2,7 @@
 
 Another side project
 
-This script makes YouTube searches fors each line in a `titles.txt` file, and outputs a `results_urls.txt` file with the IDs of each top result, a `results_titles.txt` file for the titles, and a `results_skipped.txt` file if any searches didn't have valid results.
+This script makes YouTube searches for each line in a `titles.txt` file, and outputs a `results_urls.txt` file with the IDs of each top result, a `results_titles.txt` file for the titles, and a `results_skipped.txt` file if any searches didn't have valid results.
 
 ## Dependencies
 
