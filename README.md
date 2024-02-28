@@ -17,7 +17,7 @@ Put the names of videos to search for in a `titles.txt` file in the same directo
 
 I made this to get data I can work with out of those music "playlists" on YouTube. If it has a list of songs in the description of the video, I'd copy those and put them in the `titles.txt` file (of course, after removing the ##:## timestamps).
 
-This script can also be used for batch downloading these files, as all you need to get a working YouTube URL from the results is to append `https://www.youtube.com/watch?v=` to the ID. This is a trivially easy task to automate with Python.
+This script can also be used for batch downloading these files, as all you need to get a working YouTube URL from the results is to append `https://www.youtube.com/watch?v=` to the ID. This task is trivially easy to automate with another Python script.
 
 ## To do
 
