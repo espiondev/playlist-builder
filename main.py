@@ -1,6 +1,5 @@
 import scrapetube
 import yt_dlp
-import time
 
 
 def search_yt(query, limit):
