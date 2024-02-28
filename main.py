@@ -1,5 +1,6 @@
 import scrapetube
 import yt_dlp
+import time
 
 
 def search_yt(query, limit):
@@ -41,7 +42,7 @@ for i in data:
         search_results["id"].append(video["videoId"])
         search_results["title"].append(video["title"]["runs"][0]["text"])
 
-    results_num = len(search_results)
+    results_num = len(search_results["id"])
 
     if results_num == 0:
         print("No results were found")
@@ -62,6 +63,14 @@ for i in data:
             )
         print("=" * 15 + "\n")
         # check video length
+
+        if video_info["is_live"]:
+            print("Video skipped, it is a live stream")
+            search_results["id"][v] = None
+            search_results["title"][v] = None
+            counter += 1
+            continue
+
         if int(video_info["duration"]) > int(max_duration_mins * 60):
             print(
                 f"Video skipped: result #{counter} was too long ({video_info['duration']} > {max_duration_mins*60})"
@@ -69,7 +78,6 @@ for i in data:
             search_results["id"][v] = None
             search_results["title"][v] = None
 
-        # video is good
         else:
             output["urls"].append(search_results["id"][v])
             output["titles"].append(search_results["title"][v])
@@ -88,7 +96,7 @@ print(
 # write results to text files
 if len(skipped_videos):
     print(f"Writing {len(skipped_videos)} skipped results to ./results_skipped.txt")
-    with open("results_skipped", "w") as skipped:
+    with open("results_skipped.txt", "w") as skipped:
         for i in skipped_videos:
             skipped.write(i + "\n")
 

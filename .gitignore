@@ -1,1 +1,4 @@
 *.txt
+venv/
+__pycache__/
+pyvenv.cfg
