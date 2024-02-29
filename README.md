@@ -1,4 +1,4 @@
-# badoinkazoink
+# playlist-builder
 
 Another side project
 
