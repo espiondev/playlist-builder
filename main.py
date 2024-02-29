@@ -95,17 +95,17 @@ print(
 # write results to text files
 if len(skipped_videos):
     print(f"Writing {len(skipped_videos)} skipped results to ./results_skipped.txt")
-    with open("results_skipped.txt", "w") as skipped:
+    with open("results_skipped.txt", "w", encoding="utf-8") as skipped:
         for i in skipped_videos:
             skipped.write(i + "\n")
 
 print(f"Writing {len(output['titles'])} titles to ./titles.txt")
-with open("results_titles.txt", "w") as titles:
+with open("results_titles.txt", "w", encoding="utf-8") as titles:
     for i in output["titles"]:
         titles.write(i + "\n")
 
 print(f"Writing {len(output['titles'])} video IDs to ./results_urls.txt")
-with open("results_urls.txt", "w") as urls:
+with open("results_urls.txt", "w", encoding="utf-8") as urls:
     for i in output["urls"]:
         urls.write(i + "\n")
 print("Done")
